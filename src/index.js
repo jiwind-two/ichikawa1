@@ -1,11 +1,8 @@
 import "./styles.css";
-
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-  <p>修正しました</p>
-  </div>
-`;
+/**
+ * const プロパティは変更できる
+ */
+const val5 = ["dog", "cat"];
+val5[0] = "bird";
+val5.push("monky");
+console.log(val5);
