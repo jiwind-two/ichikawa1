@@ -64,3 +64,73 @@ console.log(message30);
 const [name, age] = myProfile;
 const message3 = `私の名前は${name}です、歳は${age}歳です。`;
 console.log(message3);
+/**
+ * デフォルト値
+ */
+const sayHellow = (name = "ゲスト") => console.log(`${name}さん、こんにちは`);
+sayHellow();
+/***
+ * スプレッド構文
+ */
+
+const arr1 = [1, 2];
+console.log(arr1);
+console.log(...arr1);
+
+const sumFunc = (num1, num2) => console.log(num1 + num2);
+sumFunc(...arr1);
+
+const arr2 = [1, 2, 3, 4, 5];
+const [num1, num2, ...arr3] = arr2;
+console.log(num1);
+console.log(num2);
+console.log(arr3);
+
+/**
+ * 配列のコピーや結合
+ */
+
+const arr4 = [10, 20];
+const arr5 = [30, 40];
+const arr6 = [...arr4];
+console.log(arr6);
+arr6[0] = 100;
+console.log(arr4);
+console.log(arr6);
+
+//const arr7=[...arr4,...arr5];
+//console.log(arr7);
+
+//const arr8=arr4;
+//console.log(arr8);
+//参照が引き継がれる
+//arr8[0]=100;
+//console.log(arr4);
+
+/**
+ * map fillter
+ */
+const nameArr = ["田中", "山田", "市川"];
+//const nameArr2 = nameArr.map((name) => {
+//  return name;
+//});
+//console.log(nameArr2);
+
+nameArr.map((name, index) =>
+  console.log(`${index + 1}番目は${name}さんです。`)
+);
+
+const numArr = [1, 2, 3, 4, 5];
+const newnumArr = numArr.filter((num) => {
+  return num % 2 === 1;
+});
+console.log(newnumArr);
+
+const newnameArray = nameArr.map((name) => {
+  if (name === "市川") {
+    return name;
+  } else {
+    return `${name}さん`;
+  }
+});
+console.log(newnameArray);
